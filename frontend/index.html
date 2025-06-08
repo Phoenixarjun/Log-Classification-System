@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Classification System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">LogClassifier</a>
+            <div class="nav-links">
+                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="header">
+            <h1><i class="fas fa-file-alt"></i> Log Classification System</h1>
+            <p>Upload your CSV file containing logs for automated classification and risk assessment</p>
+        </div>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-box">
+                <input type="file" id="fileInput" accept=".csv">
+                <label for="fileInput" class="upload-button">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Choose CSV File</span>
+                </label>
+                <p class="file-info" id="fileInfo">No file selected</p>
+                <button id="classifyButton" class="classify-button" disabled>
+                    <i class="fas fa-magic"></i> Classify Logs
+                </button>
+            </div>
+        </div>
+
+        <div class="results-area" id="resultsArea" style="display: none;">
+            <div class="results-header">
+                <h2><i class="fas fa-tasks"></i> Classification Results</h2>
+                <button id="downloadButton" class="download-button">
+                    <i class="fas fa-download"></i> Download Results
+                </button>
+            </div>
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Log Message</th>
+                            <th>Predicted Label</th>
+                            <th>Risk Level</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing your file...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LogClassifier</h3>
+                    <p>Automated log classification and risk assessment system for modern applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> phoenixarjun007@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Created with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> by Naresh B A</p>
+                <p>&copy; 2023 LogClassifier. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src="{{ url_for('static', path='script.js') }}"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
