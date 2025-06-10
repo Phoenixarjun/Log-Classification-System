@@ -50,8 +50,8 @@ F --> E[Final Label + Risk Level]
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/log-classification.git
-cd log-classification
+git clone https://github.com/Phoenixarjun/Log-Classification-System
+cd Log-Classification-System
 ```
 
 ### 2. Install Dependencies
